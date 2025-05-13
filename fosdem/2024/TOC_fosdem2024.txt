@@ -1,0 +1,30 @@
+Saturday	
+FOSDEM 2024 - The State of OpenJDK	
+FOSDEM 2024 - A decade of JDK Updates in OpenJDK	
+FOSDEM 2024 - Exploring Quarkus Native: Choices and Implementation	
+FOSDEM 2024 - The CarpentriesOffline: Teaching Foundational Data Science and Coding Skills with Little or no Internet Access	
+FOSDEM 2024 - The French Open Science Monitor: steering the science based on open bibliographic databases	
+FOSDEM 2024 - Infra Finder: Increasing visibility of open technologies for open science	
+FOSDEM 2024 - Virtual Thread’s Next Steps	
+FOSDEM 2024 - Updating open data standards	
+FOSDEM 2024 - A microkernel-based orchestrator for distributed Internet services?	
+FOSDEM 2024 - A Modular Approach to Effortless and Dependency-Aware Unikernel Building	
+FOSDEM 2024 - Run Node.js in a unikernel reliably	
+FOSDEM 2024 - Carbon measurement and energy attribution for processes and hardware devices in the Linux kernel	
+FOSDEM 2024 - Web-accessibility for open-source privacy & security tools	
+FOSDEM 2024 - Science without secrets – how Galaxy democratizes data analysis	
+FOSDEM 2024 - Workflow managers in high-energy physics: enhancing analyses with Snakemake	
+FOSDEM 2024 - Open Neuroscience: practical suggestions for conducting open neuroscience research	
+FOSDEM 2024 - Apache Maven 4.0.0 - Current State	
+Sunday	
+FOSDEM 2024 - Open Source in 2024: boundaries, burnout, business	
+FOSDEM 2024 - Know Your Ingredients: Security Starts With the SBOM	
+FOSDEM 2024 - Breaking Barriers: Content Management Systems and Accessibility	
+FOSDEM 2024 - SBOMs that you can trust - the good, the bad, and the ugly	
+FOSDEM 2024 - Desktop Linux, as easy as a smartphone! Just in a Snap!	
+FOSDEM 2024 - Web Accessibility and ATAG	
+FOSDEM 2024 - Open Source for Sustainable and Long lasting Phones	
+FOSDEM 2024 - A journey documenting the Sanco 8003 computer	
+FOSDEM 2024 - Controlling a 6 degree Robot Arm using a 48K ZX Spectrum	
+FOSDEM 2024 - FOSDEM 2024 Highlights	
+
