@@ -1,0 +1,43 @@
+Table des matières
+	Accessibilité
+		Comment rendre une web app accessible à une personne non voyante ?
+		Daltonien, mais pourquoi je vois rien ? [*]
+		L’IA et le handicap : progrès ou exclusion ?
+		Au-delà des heures : La semaine de 4 jours comme levier d’égalité
+	Empreinte
+		Comment réduire son empreinte carbone grâce à un calendrier de mise à l’échelle automatique ?
+		Et si on divisait par 4 l'empreinte carbone du numérique ? [*]
+		Green washing ou RSE pragmatique, si on choisissait ?
+	Sécurité
+		Sécurité du GenAI & des LLM: Une nouvelle ère d'Hacking éthique
+		Cybersécurité et cyberdéfense : un sujet géopolitique - Guillaume Poupard
+		Quand la cybersécurité n'est pas qu'une affaire de failles
+		La fin des mots de passes partagés avec Vault et Boundary
+	Tests
+		Testcontainers : Simplifiez vos tests d'intégration et vos développements [à tester]
+		Je délègue tous mes tests à une IA
+	Analyse des erreurs
+		Mais non, c'est pas une erreur de CORS
+	Conteneur
+		De Compose à Kubernetes, Same player shoot again
+	Code
+		Porter le Flambeau du Clean Code à l’ère du GenAI [livres/articles à lire]
+		A Healthy diet for your Java application
+		Jeux en ligne, mais comment ça lag pas ?
+		L'IA et qualité de code : Construire une synergie avec l’intelligence humaine
+		Sauve un dév, écris une doc !
+	Recherche
+		IA en médecine : où en sommes-nous ?
+		Tout ce que vous n'avez jamais voulu savoir sur les fuseaux horaires
+		La recherche à l'ère de l'IA
+		Apache Lucene : de l'indexation textuelle à l'intelligence artificielle
+	Upgrade
+		Bootiful Spring Boot 3.3
+		Angular : le renouveau (v17) (Uni) [à reprendre]
+	Architecture
+		Architecture Hexagonale: Comment venir à bout du code spaghetti ? (Kévin LLOPIS) [pratiquer ?]
+		L'Architecture Hexagonale par la pratique, le live coding qui rendra vos applications pl...
+		L’architecture micro frontend : comment transformer son site web en puzzle géant collaboratif
+	Gestion de la mémoire
+		Understanding 5 languages memory models (or most of them)
+
