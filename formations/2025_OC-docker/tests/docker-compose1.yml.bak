@@ -1,0 +1,22 @@
+services:
+	my_nginx: 
+		build:
+			context: ./my_custom_image 
+# my_custom_image from docker file director
+		depends_on:
+			- my_postgres
+		ports:
+			- 80808/80
+	my_postgres:
+		image: prostgres:latest
+		environment:
+			POSTGRES_DB: openclassrooms
+			POSTGRES_PASSWORD: openclassrooms
+		ports:
+			- 5432:5432
+		volumes:
+			- my_postgres_data:/var/lib/postgres/data
+#/var/lib/postgres/data path where to mount my_postgres_data
+
+volumes:
+	my_postgres_data:

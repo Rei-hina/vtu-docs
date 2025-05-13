@@ -1,0 +1,518 @@
+-----------------------
+-- DOCKER -------------
+-----------------------
+
+-----------------------installation
+
+	sur poste infotel, pas de docker desktop, installation de WSL via GLPI
+	lancement de WLS : Ubuntu 24.04.1 LTS
+	https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04-fr
+	
+	autre :
+		https://doc.ubuntu-fr.org/docker
+		https://openclassrooms.com/fr/courses/8431896-optimisez-votre-deploiement-en-creant-des-conteneurs-avec-docker/8482700-installez-docker
+		
+	(voir terminal2.txt)
+
+-----------------------formation : OpenClassrooms
+	
+	https://openclassrooms.com/fr/courses/8431896-optimisez-votre-deploiement-en-creant-des-conteneurs-avec-docker
+		Partie 1
+			Prenez en main la conteneurisation avec Docker
+			Tirez un maximum de ce cours
+			Découvrez la conteneurisation
+			Installez Docker
+			Manipulez Docker
+			Créez votre première image
+			Quiz : Prendre en main la conteneurisation avec Docker
+		Partie 2
+			Déployez votre application avec Docker
+			Planifiez le déploiement
+			Publiez votre image sur Docker Hub
+			Intégrez votre container dans un écosystème avec Docker Compose
+			Passez à l'échelle avec Docker Swarm
+			Quiz : Déployer son application avec Docker
+		Partie 3
+			Fiabilisez le déploiement de vos applications
+			Sécurisez votre déploiement
+			Optimisez les ressources utilisées par vos containers
+			Agencez vos containers
+			Quiz : Fiabiliser le déploiement de ses applications
+
+	(voir principalement terminal1.txt
+		puis terminal2.txt, terminal3.txt, terminal4.txt)
+		
+		
+	Docker Engine - Docker Images - Docker Hub - Docker Swarm
+
+-----------------------version
+
+	docker version
+	
+-----------------------process en cours 
+	
+	docker ps 
+	
+-----------------------process terminés
+	
+	docker ps -a 
+
+-----------------------images existante 
+
+	docker images 
+
+-----------------------cgroup
+
+	sans ajout dans le group, nécessité systématique d'être en sudo, exemple :
+		sudo docker run hello-world
+		
+	---------ajout au cgroup
+	
+		sudo usermod -aG docker ${USER}
+		
+-----------------------run (hello-world)
+
+	docker run hello-world
+	
+-----------------------run (nginx)
+
+	NOTE : depuis le réseau Infotel, blocage pour télécharger 'nginx' (probablement lié au proxi ??) ok depuis la maison
+		<< E: Some index files failed to download. They have been ignored, or old ones used instead. >>
+		
+	sur le terminal :	
+		docker run nginx:latest
+	
+	sur un port :	
+		docker run -it --rm -p 8080:80 --name my-nginx nginx:latest
+	tester : 
+		curl http://localhost:8080
+	
+			[...]<h1>Welcome to nginx!</h1>[...]
+
+-----------------------commit
+
+	docker commit my-nginx my-nginx:backup
+	
+	docker images
+		REPOSITORY           TAG       IMAGE ID       CREATED             SIZE
+		my-nginx             backup    e4fa51748101   14 seconds ago      254MB
+		nginx                latest    4e1b6bae1e48   8 days ago          192MB
+
+-----------------------Dockerfile 
+
+	vi Dockerfile
+		:qa pour quitter
+		:wq pour enregistrer
+		i passer en mode édition 'insert'
+			ctrl+c quitter le mode édition
+	
+	exemple de Dockerfile avec "cowsay" : ---------exemple (v2.0)
+		# On s'appuie sur l'image ubuntu:22.04
+		FROM ubuntu:24.04
+		# Notre répertoire de travail
+		# sera la racine du système de fichier
+		# du conteneur
+		WORKDIR /
+		# Notre image ne nécessite pas
+		# particulièrement de copier un fichier.
+		# Cependant, l'instruction suivante permettrait
+		# de copier le répertoire ./messages de la
+		# machine hôte vers le répertoire /data du conteneur
+		# COPY ./messages /data
+		RUN apt-get update && apt-get install -y cowsay dumb-init
+		# Définition d'une variable d'environnement
+		# "MESSAGE" avec en valeur par défaut "Mooo !!!" (v1.0) / "Bidonjour les aminchs" (v2.0)
+		ENV MESSAGE="Bidonjour les aminchs"
+		# Utilisation de l'utilitaire "dumb-init"
+		# comme point d'entrée de notre conteneur
+		ENTRYPOINT ["/usr/bin/dumb-init", "--"]
+		# Définition de notre commande par défaut
+		CMD ["/bin/bash", "-c", "/usr/games/cowsay $MESSAGE"]
+		# Notre conteneur n'expose pas véritablement
+		# de service réseau, les instructions EXPOSE
+		# et VOLUMES n'ont donc pas de réelle utilité ici
+		# EXPOSE 80
+		# VOLUME /data
+		# Définition d'une étiquette arbitraire sur notre image
+		LABEL description="Un conteneur permettant d'afficher des messages humoristiques."
+		
+	depuis le répertoire du Dockerfile 
+	
+		---------vi Dockerfile (v1.0) + build
+			docker build -t cowsay:latest .
+		---------run
+			docker run -it --rm cowsay:latest
+		---------tag
+			docker tag cowsay:latest cowsay:v1.0
+			
+			docker run -it --rm cowsay:v1.0
+			 __________
+			< Mooo !!! >
+			 ----------
+					\   ^__^
+					 \  (oo)\_______
+						(__)\       )\/\
+							||----w |
+							||     ||
+
+		---------vi Dockerfile (v2.0) + build
+			docker build -t cowsay:v2.0 .
+		---------images
+			docker images
+				REPOSITORY           TAG       IMAGE ID       CREATED          SIZE
+				cowsay               v1.0      752e6a5db67d   16 minutes ago   184MB
+				cowsay               v2.0      0f253fa64fa3   16 minutes ago   184MB
+		---------run
+			docker run -it --rm cowsay:v2.0
+				 _______________________
+				< Bidonjour les aminchs >
+				 -----------------------
+						\   ^__^
+						 \  (oo)\_______
+							(__)\       )\/\
+								||----w |
+								||     ||
+			
+		---------rmi (supprimer image)
+			docker rmi cowsay:v1.0
+			docker images
+				REPOSITORY           TAG       IMAGE ID       CREATED          SIZE
+				cowsay               v2.0      0f253fa64fa3   16 minutes ago   184MB
+
+-----------------------login
+
+	s'enregistrer sur DockerHub : https://hub.docker.com/
+	compte : vtu75/(mdp infotel simple)
+	
+	sur le terminal :	
+		docker login
+
+			USING WEB-BASED LOGIN
+
+			i Info → To sign in with credentials on the command line, use 'docker login -u <username>'
+
+
+			Your one-time device confirmation code is: KCHZ-SWBW
+			Press ENTER to open your browser or submit your device code here: https://login.docker.com/activate
+
+			Waiting for authentication in the browser…
+
+			WARNING! Your credentials are stored unencrypted in '/home/v_tu/.docker/config.json'.
+			Configure a credential helper to remove this warning. See
+			https://docs.docker.com/go/credential-store/
+		
+-----------------------DockerHub
+
+	---------push pousser sur DockerHub
+		docker push vtu75/libra:latest
+		
+	---------pull tirer de DockerHub
+		docker pull vtu75/libra:latest
+
+-----------------------registre privé
+
+	docker run -it --rm --name my-registry -p 5000/5000 registry:2
+
+
+	docker push localhost:5000/nginx:latest
+
+	curl http://localhost:5000/v2/_catalog
+	
+	docker pull localhost:5000/nginx:latest
+	
+	docker images ??
+		REPOSITORY             TAG       IMAGE ID       CREATED         SIZE
+		localhost:5000/nginx   latest    4e1b6bae1e48   8 days ago      192MB
+	
+	SUM UP:
+		docker run -d -p 5000  --name registry registry:2
+		docker tag libra:latest localhost:5000/libra:latest
+		docker push localhost:5000/libra:latest
+		docker pull localhost:5000/libra:latest
+
+-----------------------compose 
+
+	---------exemple de docker-compose.yml
+
+		services:
+		  my_nginx:
+			image: nginx:latest
+			depends_on:
+			  - my_postgres
+			ports:
+			  - 8080:80
+			networks:
+			  - my_network
+		  my_postgres:
+			image: postgres:latest
+			environment:
+			  POSTGRES_DB: mytestdb
+			  POSTGRES_PASSWORD: mytest
+			ports:
+			  - 5432:5432
+			volumes:
+			  - my_postgres_data:/var/lib/postgres/data
+			networks:
+			  - my_network
+
+		volumes:
+		  my_postgres_data:
+
+		networks:
+		  my_network:
+			driver: bridge
+	         
+	---------construire 
+		
+		docker compose build
+		
+		docker images
+			REPOSITORY             TAG       IMAGE ID       CREATED         SIZE
+			my-nginx               backup    e4fa51748101   3 days ago      254MB
+			vtu75/libra            latest    a7810a9b496c   3 days ago      161MB
+			libra                  latest    a7810a9b496c   3 days ago      161MB
+			libra                  v0.0.1    a7810a9b496c   3 days ago      161MB
+			cowsay                 v1.0      752e6a5db67d   4 days ago      184MB
+			cowsay                 v2.0      0f253fa64fa3   4 days ago      184MB
+			v_tu/ubuntu-nodejs     latest    2c177fd98512   11 days ago     78.1MB
+			nginx                  latest    4e1b6bae1e48   11 days ago     192MB
+			localhost:5000/nginx   latest    4e1b6bae1e48   11 days ago     192MB
+			ubuntu                 latest    602eb6fb314b   2 weeks ago     78.1MB
+			postgres               latest    f49abb9855df   2 months ago    438MB
+			hello-world            latest    74cc54e27dc4   3 months ago    10.1kB
+			registry               2         26b2eb03618e   19 months ago   25.4MB
+	
+	---------lancer 
+		
+		NOTE : suite à la mise en place récente de l'obligation de s'authentifier pour faire un compose up, il faut donc avant :
+			
+			docker login
+		
+		lancer :
+		
+			docker compose up
+				Attaching to my_nginx-1, my_postgres-1
+				my_postgres-1  | The files belonging to this database system will be owned by user "postgres".
+				[...]
+		
+		lancer en fond :
+			
+			docker compose up -d
+				[+] Running 2/2
+				 ✔ Container v_tu-my_postgres-1  Started                          0.4s
+				 ✔ Container v_tu-my_nginx-1     Started                          0.8s
+	
+	---------logs
+	
+		docker compose logs -f
+			my_nginx-1     | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+			my_nginx-1     | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+			[...]
+	
+	---------afficher ?
+	
+		docker compose top
+			SERVICE      #   UID       PID    PPID   C   STIME  TTY  TIME      CMD
+			my_nginx     1   root      30913  30878  0   17:16  ?    00:00:00  nginx: master process nginx -g daemon off;
+			my_nginx     1   message+  30986  30913  0   17:16  ?    00:00:00  nginx: worker process
+			my_nginx     1   message+  30987  30913  0   17:16  ?    00:00:00  nginx: worker process
+			my_nginx     1   message+  30988  30913  0   17:16  ?    00:00:00  nginx: worker process
+			my_nginx     1   message+  30989  30913  0   17:16  ?    00:00:00  nginx: worker process
+			my_nginx     1   message+  30990  30913  0   17:16  ?    00:00:00  nginx: worker process
+			my_nginx     1   message+  30991  30913  0   17:16  ?    00:00:00  nginx: worker process
+			my_nginx     1   message+  30992  30913  0   17:16  ?    00:00:00  nginx: worker process
+			my_nginx     1   message+  30993  30913  0   17:16  ?    00:00:00  nginx: worker process
+			my_postgres  1   999       30796  30771  0   17:16  ?    00:00:00  postgres
+			my_postgres  1   999       30937  30796  0   17:16  ?    00:00:00  postgres: checkpointer
+			my_postgres  1   999       30938  30796  0   17:16  ?    00:00:00  postgres: background writer
+			my_postgres  1   999       30962  30796  0   17:16  ?    00:00:00  postgres: walwriter
+			my_postgres  1   999       30963  30796  0   17:16  ?    00:00:00  postgres: autovacuum launcher
+			my_postgres  1   999       30964  30796  0   17:16  ?    00:00:00  postgres: logical replication launcher
+	
+	---------arrêter
+	
+		docker compose stop
+			[+] Stopping 2/2
+			 ✔ Container v_tu-my_nginx-1     Stopped                          0.9s
+			 ✔ Container v_tu-my_postgres-1  Stopped                          0.8s
+		
+	---------retirer 
+	
+		docker compose down -v
+			[+] Running 4/4
+			 ✔ Container v_tu-my_nginx-1     Removed                          0.0s
+			 ✔ Container v_tu-my_postgres-1  Removed                          0.1s
+			 ✔ Volume v_tu_my_postgres_data  Removed                          0.0s
+			 ✔ Network v_tu_my_network       Removed                          0.7s
+	
+	---------Dockerfile pour test docker-compose ?
+		
+		# On s'appuie sur l'image ubuntu:noble
+		FROM ubuntu:noble
+
+		# ARG (variable like)
+		ARG LIBRA_VERSION=0.0.1
+		ARG LIBRA_REPOSITORY=https://github.com/OpenClassrooms-Student-Center/8431896-optimisez-votre-deploiement-en-creant-des-conteneurs-avec-docker
+		ARG LIBRA_CHECKSUM=d0757c5b427825126f98ffa07683d676fb8c62a02d098659cce9d3cd485b79a0
+
+		# Notre répertoire de travail
+		# sera la racine du système de fichier
+		# du conteneur libra
+		WORKDIR /libra
+
+		# On met à jour les dépendances système afin de limiter les risques
+		# de présence de failles de sécurité dans l’image finale
+		RUN apt-get update -y && DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
+
+		# On installe les dépendance nécessaires à la récupération de l’application Libra
+		RUN apt-get update -y && DEBIAN_FRONTEND=noninteractive apt-get install -y wget
+
+		# On télécharge l'archive contenant l'exécutable Libra
+		RUN wget \
+			-O libra.tar.gz \
+			${LIBRA_REPOSITORY}/releases/download/v${LIBRA_VERSION}/libra_${LIBRA_VERSION}_linux_amd64.tar.gz
+
+		#RUN echo "${LIBRA_REPOSITORY}/releases/download/v${LIBRA_VERSION}/libra_${LIBRA_VERSION}_linux_amd64.tar.gz"
+
+		# On vérifie l'empreinte de l'archive
+		#RUN echo "${LIBRA_CHECKSUM} libra.tar.gz" | sha256sum --check --status
+
+		# On créait le répertoire /usr/local/bin
+		RUN mkdir -p /usr/local/bin
+
+		# On extrait le binaire Libra contenu dans l'archive
+		# et on le place directement dans le répertoire /usr/local/bin
+		RUN tar -xzf libra.tar.gz -C /usr/local/bin libra
+
+		# On s'assure que le binaire est exécutable
+		RUN chmod +x /usr/local/bin/libra
+
+		# On indique que l’application écoute sur le port 8080
+		# et que ce port devrait être exposé
+		EXPOSE 8080
+
+		# On indique que le conteneur souhaite utiliser un volume
+		# pour le répertoire /uploads
+		VOLUME /uploads
+		
+	---------postgres...
+	
+		docker run --name my-postgres -e POSTGRES_PASSWORD=openclassrooms -e POSTGRES_USER=openclassrooms -d postgres
+		
+-----------------------scan avec Trivy
+
+	depuis répertoire de test exemple : ~/OC/trivy
+	
+	---------installer :
+		curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b. latest
+	
+	---------Dockerfile (depuis le répertoire de l'image) :
+	
+		vi Dockerfile
+
+		Dockerfile pour test (v1.0)
+			FROM node:lts-alpine3.15
+			RUN npm install http-server -g
+			COPY ./app /app
+			CMD ["http-server", "/app"]
+
+		Dockerfile pour test (v2.0)	
+			FROM node:lts-alpine3.20
+			RUN npm install http-server -g
+			COPY ./app /app
+			CMD ["http-server", "/app"]
+
+
+	--------Dockerfile (v1.0)
+		puis créer répertoire app (depuis le répertoire de l'image) :
+			mkdir app
+			
+	--------build (depuis le répertoire de l'image) :
+		docker build -t my-image:latest .
+		
+	--------passer le scan avec trivy (depuis le répertoire où a été installé Trivy) :
+		
+		./trivy impage my-image:latest
+		
+			2025-04-28T17:50:46+02:00       INFO    [vulndb] Need to update DB
+			[...]
+			Report Summary
+
+			┌──────────────────────────────────────────────────────────────────────────────────┬──────────┬─────────────────┬─────────┐
+			│                                      Target                                      │   Type   │ Vulnerabilities │ Secrets │
+			├──────────────────────────────────────────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
+			│ my-image:latest (alpine 3.15.6)                                                  │  alpine  │20        │    -    │
+			├──────────────────────────────────────────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
+			│ opt/yarn-v1.22.19/package.json                                                   │ node-pkg │ 0        │    -    │
+			├──────────────────────────────────────────────────────────────────────────────────┼──────────┼──────────────
+			[...]
+			
+			
+		>> exemple 20 Vulnerabilities sur alpine
+	
+	--------Dockerfile (v2.0)
+	
+		correction du pb en augmentant la version de alpine 
+	
+	--------build 
+		docker build -t my-image:latest .
+		
+	--------passer le scan avec trivy 
+		./trivy impage my-image:latest
+			[+] Building 16.1s (8/8) FINISHED                docker:default
+			[...]
+			Report Summary
+
+			┌──────────────────────────────────────────────────────────────────────────────────┬──────────┬─────────────────┬─────────┐
+			│                                      Target                                      │   Type   │ Vulnerabilities │ Secrets │
+			├──────────────────────────────────────────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
+			│ my-image:latest (alpine 3.20.6)                                                  │  alpine  │ 0        │    -    │
+			├──────────────────────────────────────────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
+			│ opt/yarn-v1.22.22/package.json                                                   │ node-pkg │ 0        │    -    │
+			├──────────────────────────────────────────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
+
+
+		>> exemple maintenant 0 Vulnerabilities sur alpine
+
+-----------------------cmd liste
+	sudo usermod -aG docker ${USER}
+	docker version : Afficher la version de Docker (client & serveur)
+	docker images : Lister les images
+	docker pull <image> : Télécharger une image
+	docker rmi <image> : Supprimer une image
+	docker volume ls : Lister les volumes
+	docker volume create <volume_name> : Créer un volume
+	docker volume rm <volume_name> : Supprimer un volume
+	docker network ls : Lister les networks
+	docker network create <network_name> : Créer un network
+	docker network rm <network_name> : Supprimer les networks
+	docker run -it <image> : Lancer un conteneur en utilisant l’image téléchargée en mode intéractif
+	docker run -d <image> : Lancer un conteneur en utilisant l’image téléchargée en tâche de fond
+	docker run -v <volume_name>:/path/to/dir -it <image> : Lancer un conteneur en utilisant l’image téléchargée avec un volume
+	docker run -p <host_port>:<container_port> -it <image> : Lancer un conteneur en utilisant l’image téléchargée en exposant des ports du conteneur
+	docker tag <tag> <nom_image:tag_actuel> : Pour appliquer un tag à une image Docker
+	docker rmi <nom_image:tag> : Pour supprimer un tag,
+	docker exec <> : Pour exécuter un conteneur
+	docker login : Se connecter à DockerHub
+	docker push <your username>/<image>:<version> : publier sur le Docker Hub 
+	docker pull <your username>/<image>:<version> : publier du Docker Hub 
+	docker compose build : Construit les images des services définis dans le fichierdocker-compose.yml
+	docker compose up : Démarre les conteneurs, crée les réseaux et les volumes définis.
+	docker compose down : Arrête et supprime les conteneurs, les réseaux et les volumes créés par up.
+	docker compose ps : Liste les conteneurs en cours d’exécution.
+	docker compose logs : Affiche les journaux d'exécution des conteneurs.
+	docker compose top / stats : Visualise l’usage des ressources et les processus en cours d’exécution.
+
+	docker swarm init : Initialisation d’un cluster Swarm avec la commande 
+	docker swarm join-token worker : Générer un jeton d’authentification pour joindre un nouveau nœud au cluster (depuis le noeud principal)
+	docker swarm join --token <worker-token> <manager-ip>:2377 : Joindre un nœud au cluster avec la commande (depuis le noeud à joindre)
+	docker node ls : Lister les nœuds du cluster
+	docker node inspect <node-id> : La commande permettant d’inspecter un nœud spécifique
+	docker stack deploy -c docker-compose.yml <stack-name> : Déployer une “stack” sur le cluster Swarm
+	docker stack ls : Lister les stacks déployées
+	docker stack ps <stack-name> : Lister les tâches (conteneurs) en cours d’exécution dans une stack spécifique
+	docker stack rm <stack-name> : Supprimer une stack 
+	
+	docker run --cap-drop=ALL --cap-add=NET_BIND_SERVICE my-image : Définir les capabilities au démarrage (exemple)
+
+

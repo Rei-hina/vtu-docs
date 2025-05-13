@@ -1,0 +1,54 @@
+Welcome to Ubuntu 24.04.1 LTS (GNU/Linux 5.15.167.4-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Fri Apr 25 11:08:23 CEST 2025
+
+  System load:  0.02                Processes:             70
+  Usage of /:   0.7% of 1006.85GB   Users logged in:       1
+  Memory usage: 9%                  IPv4 address for eth0: 172.27.96.66
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+This message is shown once a day. To disable it please create the
+/home/v_tu/.hushlogin file.
+v_tu@PN-N-0237:~$ ll
+total 80
+drwxr-x--- 11 v_tu v_tu 4096 Apr 25 09:52 ./
+drwxr-xr-x  3 root root 4096 Mar 27 14:23 ../
+-rw-r--r--  1 v_tu v_tu  220 Mar 27 14:23 .bash_logout
+-rw-r--r--  1 v_tu v_tu 3771 Mar 27 14:23 .bashrc
+drwx------  3 v_tu v_tu 4096 Mar 27 17:19 .cache/
+drwxr-xr-x  3 v_tu v_tu 4096 Mar 27 17:19 .config/
+drwx------  3 v_tu v_tu 4096 Apr 23 10:21 .docker/
+drwxr-xr-x  2 v_tu v_tu 4096 Mar 27 14:23 .landscape/
+-rw-------  1 v_tu v_tu   20 Apr 18 14:44 .lesshst
+-rw-r--r--  1 v_tu v_tu    0 Apr 25 11:08 .motd_shown
+-rw-r--r--  1 v_tu v_tu  807 Mar 27 14:23 .profile
+-rw-------  1 v_tu v_tu   71 Apr 25 09:52 .psql_history
+-rw-r--r--  1 v_tu v_tu    0 Mar 27 16:36 .sudo_as_admin_successful
+drwxr-xr-x  2 v_tu v_tu 4096 Apr 23 13:35 .vim/
+-rw-------  1 v_tu v_tu 8233 Apr 24 16:04 .viminfo
+-rw-rw-r--  1 v_tu v_tu 1122 Apr 24 15:22 Dockerfile
+drwxr-xr-x  2 v_tu v_tu 4096 Apr 24 16:04 OC/
+drwxr-xr-x  3 v_tu v_tu 4096 Mar 27 17:19 go/
+drwxr-xr-x 24 v_tu v_tu 4096 Mar 27 17:22 podman/
+drwxr-xr-x  2 v_tu v_tu 4096 Apr 23 13:49 www/
+v_tu@PN-N-0237:~$ docker images
+REPOSITORY           TAG       IMAGE ID       CREATED        SIZE
+my-nginx             backup    e4fa51748101   21 hours ago   254MB
+libra                v0.0.1    a7810a9b496c   22 hours ago   161MB
+cowsay               v2.0      0f253fa64fa3   23 hours ago   184MB
+cowsay               v1.0      752e6a5db67d   23 hours ago   184MB
+v_tu/ubuntu-nodejs   latest    2c177fd98512   8 days ago     78.1MB
+nginx                latest    4e1b6bae1e48   8 days ago     192MB
+ubuntu               latest    602eb6fb314b   2 weeks ago    78.1MB
+postgres             latest    f49abb9855df   8 weeks ago    438MB
+hello-world          latest    74cc54e27dc4   3 months ago   10.1kB
+v_tu@PN-N-0237:~$

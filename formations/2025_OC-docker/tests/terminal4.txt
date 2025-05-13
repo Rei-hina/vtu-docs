@@ -1,0 +1,526 @@
+v_tu@PN-N-0237:~$ docker exec -it my-nginx /bin/bash
+root@708034db1043:/# apt update && apt install -y vim
+Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8792 kB]
+Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [512 B]
+Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [260 kB]
+Fetched 9307 kB in 2s (3826 kB/s)
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+1 package can be upgraded. Run 'apt list --upgradable' to see it.
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  libgpm2 libsodium23 vim-common vim-runtime xxd
+Suggested packages:
+  gpm ctags vim-doc vim-scripts
+The following NEW packages will be installed:
+  libgpm2 libsodium23 vim vim-common vim-runtime xxd
+0 upgraded, 6 newly installed, 0 to remove and 1 not upgraded.
+Need to get 8979 kB of archives.
+After this operation, 41.9 MB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian bookworm/main amd64 vim-common all 2:9.0.1378-2+deb12u2 [125 kB]
+Get:2 http://deb.debian.org/debian bookworm/main amd64 libgpm2 amd64 1.20.7-10+b1 [14.2 kB]
+Get:3 http://deb.debian.org/debian bookworm/main amd64 libsodium23 amd64 1.0.18-1 [161 kB]
+Get:4 http://deb.debian.org/debian bookworm/main amd64 vim-runtime all 2:9.0.1378-2+deb12u2 [7027 kB]
+Get:5 http://deb.debian.org/debian bookworm/main amd64 vim amd64 2:9.0.1378-2+deb12u2 [1568 kB]
+Get:6 http://deb.debian.org/debian bookworm/main amd64 xxd amd64 2:9.0.1378-2+deb12u2 [84.1 kB]
+Fetched 8979 kB in 1s (8355 kB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package vim-common.
+(Reading database ... 7582 files and directories currently installed.)
+Preparing to unpack .../0-vim-common_2%3a9.0.1378-2+deb12u2_all.deb ...
+Unpacking vim-common (2:9.0.1378-2+deb12u2) ...
+Selecting previously unselected package libgpm2:amd64.
+Preparing to unpack .../1-libgpm2_1.20.7-10+b1_amd64.deb ...
+Unpacking libgpm2:amd64 (1.20.7-10+b1) ...
+Selecting previously unselected package libsodium23:amd64.
+Preparing to unpack .../2-libsodium23_1.0.18-1_amd64.deb ...
+Unpacking libsodium23:amd64 (1.0.18-1) ...
+Selecting previously unselected package vim-runtime.
+Preparing to unpack .../3-vim-runtime_2%3a9.0.1378-2+deb12u2_all.deb ...
+Adding 'diversion of /usr/share/vim/vim90/doc/help.txt to /usr/share/vim/vim90/doc/help.txt.vim-tiny by vim-runtime'
+Adding 'diversion of /usr/share/vim/vim90/doc/tags to /usr/share/vim/vim90/doc/tags.vim-tiny by vim-runtime'
+Unpacking vim-runtime (2:9.0.1378-2+deb12u2) ...
+Selecting previously unselected package vim.
+Preparing to unpack .../4-vim_2%3a9.0.1378-2+deb12u2_amd64.deb ...
+Unpacking vim (2:9.0.1378-2+deb12u2) ...
+Selecting previously unselected package xxd.
+Preparing to unpack .../5-xxd_2%3a9.0.1378-2+deb12u2_amd64.deb ...
+Unpacking xxd (2:9.0.1378-2+deb12u2) ...
+Setting up libsodium23:amd64 (1.0.18-1) ...
+Setting up libgpm2:amd64 (1.20.7-10+b1) ...
+Setting up xxd (2:9.0.1378-2+deb12u2) ...
+Setting up vim-common (2:9.0.1378-2+deb12u2) ...
+Setting up vim-runtime (2:9.0.1378-2+deb12u2) ...
+Setting up vim (2:9.0.1378-2+deb12u2) ...
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/editor (editor) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/editor.1.gz because associated file /usr/share/man/man1/vim.1.gz (of link group editor) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/da/man1/editor.1.gz because associated file /usr/share/man/da/man1/vim.1.gz (of link group editor) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/de/man1/editor.1.gz because associated file /usr/share/man/de/man1/vim.1.gz (of link group editor) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/fr/man1/editor.1.gz because associated file /usr/share/man/fr/man1/vim.1.gz (of link group editor) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/it/man1/editor.1.gz because associated file /usr/share/man/it/man1/vim.1.gz (of link group editor) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ja/man1/editor.1.gz because associated file /usr/share/man/ja/man1/vim.1.gz (of link group editor) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/pl/man1/editor.1.gz because associated file /usr/share/man/pl/man1/vim.1.gz (of link group editor) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ru/man1/editor.1.gz because associated file /usr/share/man/ru/man1/vim.1.gz (of link group editor) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/tr/man1/editor.1.gz because associated file /usr/share/man/tr/man1/vim.1.gz (of link group editor) doesn't exist
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/ex (ex) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/ex.1.gz because associated file /usr/share/man/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/da/man1/ex.1.gz because associated file/usr/share/man/da/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/de/man1/ex.1.gz because associated file/usr/share/man/de/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/fr/man1/ex.1.gz because associated file/usr/share/man/fr/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/it/man1/ex.1.gz because associated file/usr/share/man/it/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ja/man1/ex.1.gz because associated file/usr/share/man/ja/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/pl/man1/ex.1.gz because associated file/usr/share/man/pl/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ru/man1/ex.1.gz because associated file/usr/share/man/ru/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/tr/man1/ex.1.gz because associated file/usr/share/man/tr/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/rview (rview) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/rvim (rvim) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vi (vi) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/vi.1.gz because associated file /usr/share/man/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/da/man1/vi.1.gz because associated file/usr/share/man/da/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/de/man1/vi.1.gz because associated file/usr/share/man/de/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/fr/man1/vi.1.gz because associated file/usr/share/man/fr/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/it/man1/vi.1.gz because associated file/usr/share/man/it/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ja/man1/vi.1.gz because associated file/usr/share/man/ja/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/pl/man1/vi.1.gz because associated file/usr/share/man/pl/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ru/man1/vi.1.gz because associated file/usr/share/man/ru/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/tr/man1/vi.1.gz because associated file/usr/share/man/tr/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/view (view) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/view.1.gz because associated file /usr/share/man/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/da/man1/view.1.gz because associated file /usr/share/man/da/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/de/man1/view.1.gz because associated file /usr/share/man/de/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/fr/man1/view.1.gz because associated file /usr/share/man/fr/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/it/man1/view.1.gz because associated file /usr/share/man/it/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ja/man1/view.1.gz because associated file /usr/share/man/ja/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/pl/man1/view.1.gz because associated file /usr/share/man/pl/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ru/man1/view.1.gz because associated file /usr/share/man/ru/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/tr/man1/view.1.gz because associated file /usr/share/man/tr/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vim (vim) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vimdiff (vimdiff) in auto mode
+Processing triggers for libc-bin (2.36-9+deb12u10) ...
+v_tu@PN-N-0237:~$ usql "postgresql://postgres:openclassrooms@127
+.0.0.1:5432/openclassrooms"
+Command 'usql' not found, did you mean:
+  command 'osql' from deb freetds-bin (1.3.17+ds-2)
+  command 'isql' from deb unixodbc (2.3.12-1ubuntu0.24.04.1)
+  command 'sql' from deb parallel (20231122+ds-1)
+  command 'tsql' from deb freetds-bin (1.3.17+ds-2)
+  command 'iusql' from deb unixodbc (2.3.12-1ubuntu0.24.04.1)
+  command 'psql' from deb postgresql-client-common (257build1.1)
+  command 'asql' from deb asql (1.6-1.2)
+Try: sudo apt install <deb name>
+v_tu@PN-N-0237:~$ psql "postgresql://postgres:openclassrooms@127
+.0.0.1:5432/openclassrooms"
+psql: error: connection to server at "127.0.0.1", port 5432 failed: FATAL:  database "openclassrooms"does not exist
+v_tu@PN-N-0237:~$ psql "postgresql://postgres:openclassrooms@127.0.0.1:5432"
+psql (16.8 (Ubuntu 16.8-0ubuntu0.24.04.1), server 17.4 (Debian 17.4-1.pgdg120+2))
+WARNING: psql major version 16, server major version 17.
+         Some psql features might not work.
+Type "help" for help.
+
+postgres=# create database openclassrooms
+postgres-# \i
+\i: missing required argument
+postgres-# \l
+ERROR:  column d.daticulocale does not exist
+LINE 8:   d.daticulocale as "ICU Locale",
+          ^
+HINT:  Perhaps you meant to reference the column "d.datlocale".
+postgres-# create database openclassrooms
+postgres-# \l
+ERROR:  column d.daticulocale does not exist
+LINE 8:   d.daticulocale as "ICU Locale",
+          ^
+HINT:  Perhaps you meant to reference the column "d.datlocale".
+postgres-# ^C
+postgres=# ^C
+postgres=# quit
+v_tu@PN-N-0237:~$ psql "postgresql://postgres:openclassrooms@127.0.0.1:5432/openclassrooms"
+psql: error: connection to server at "127.0.0.1", port 5432 failed: FATAL:  database "openclassrooms"does not exist
+v_tu@PN-N-0237:~$ psql "postgresql://postgres:openclassrooms@127.0.0.1:5432"
+psql (16.8 (Ubuntu 16.8-0ubuntu0.24.04.1), server 17.4 (Debian 17.4-1.pgdg120+2))
+WARNING: psql major version 16, server major version 17.
+         Some psql features might not work.
+Type "help" for help.
+
+postgres=# CREATE DATABASE openclassrooms
+postgres-# create database openclassrooms
+postgres-# quit
+Use \q to quit.
+postgres-# \q
+v_tu@PN-N-0237:~$ docker ps
+CONTAINER ID   IMAGE        COMMAND                  CREATED              STATUS              PORTS                                      NAMES
+2b5b30595757   registry:2   "/entrypoint.sh /etc…"   About a minute ago   Up About a minute   0.0.0.0:5000->5000/tcp, [::]:5000->5000/tcp   my-registry
+v_tu@PN-N-0237:~$ docker images
+REPOSITORY           TAG       IMAGE ID       CREATED         SIZE
+my-nginx             backup    e4fa51748101   23 hours ago    254MB
+libra                latest    a7810a9b496c   24 hours ago    161MB
+libra                v0.0.1    a7810a9b496c   24 hours ago    161MB
+vtu75/libra          latest    a7810a9b496c   24 hours ago    161MB
+cowsay               v1.0      752e6a5db67d   24 hours ago    184MB
+cowsay               v2.0      0f253fa64fa3   24 hours ago    184MB
+v_tu/ubuntu-nodejs   latest    2c177fd98512   8 days ago      78.1MB
+nginx                latest    4e1b6bae1e48   8 days ago      192MB
+ubuntu               latest    602eb6fb314b   2 weeks ago     78.1MB
+postgres             latest    f49abb9855df   8 weeks ago     438MB
+hello-world          latest    74cc54e27dc4   3 months ago    10.1kB
+registry             2         26b2eb03618e   19 months ago   25.4MB
+v_tu@PN-N-0237:~$ docker nginxdemos/nginx:latest localhost:5000/ng
+inxdemos/nginx:latest
+docker: unknown command: docker nginxdemos/nginx:latest
+
+Run 'docker --help' for more information
+v_tu@PN-N-0237:~$ docker tag nginxdemos/nginx:latest localhost:500
+0/nginxdemos/nginx:latest
+Error response from daemon: No such image: nginxdemos/nginx:latest
+v_tu@PN-N-0237:~$ docker tag nginx:latest localhost:5000/nginx:lat
+est
+v_tu@PN-N-0237:~$ docker images
+REPOSITORY             TAG       IMAGE ID       CREATED         SIZE
+my-nginx               backup    e4fa51748101   23 hours ago    254MB
+libra                  latest    a7810a9b496c   24 hours ago    161MB
+libra                  v0.0.1    a7810a9b496c   24 hours ago    161MB
+vtu75/libra            latest    a7810a9b496c   24 hours ago    161MB
+cowsay                 v2.0      0f253fa64fa3   25 hours ago    184MB
+cowsay                 v1.0      752e6a5db67d   25 hours ago    184MB
+v_tu/ubuntu-nodejs     latest    2c177fd98512   8 days ago      78.1MB
+nginx                  latest    4e1b6bae1e48   8 days ago      192MB
+localhost:5000/nginx   latest    4e1b6bae1e48   8 days ago      192MB
+ubuntu                 latest    602eb6fb314b   2 weeks ago     78.1MB
+postgres               latest    f49abb9855df   8 weeks ago     438MB
+hello-world            latest    74cc54e27dc4   3 months ago    10.1kB
+registry               2         26b2eb03618e   19 months ago   25.4MB
+v_tu@PN-N-0237:~$ docker push localhost:5000/nginx:latest
+The push refers to repository [localhost:5000/nginx]
+d1e3e4dd1aaa: Pushed
+ccc5aac17fc4: Pushed
+8d83f6b79143: Pushed
+9e3c6e8c1e25: Pushed
+9aad78ecf380: Pushed
+bd903131a05e: Pushed
+ea680fbff095: Pushed
+latest: digest: sha256:ae61960a9324ea2071d81ef4554f9015ff89cfa43cacbfe8b4a23d7d3710ecde size: 1778
+v_tu@PN-N-0237:~$ curl http://localhost:5000/v2/_catalog
+{"repositories":["nginx"]}
+v_tu@PN-N-0237:~$ docker rmi localhost:5000/nginx:latest
+Untagged: localhost:5000/nginx:latest
+Untagged: localhost:5000/nginx@sha256:ae61960a9324ea2071d81ef4554f9015ff89cfa43cacbfe8b4a23d7d3710ecde
+v_tu@PN-N-0237:~$ docker images
+REPOSITORY           TAG       IMAGE ID       CREATED         SIZE
+my-nginx             backup    e4fa51748101   23 hours ago    254MB
+libra                latest    a7810a9b496c   24 hours ago    161MB
+libra                v0.0.1    a7810a9b496c   24 hours ago    161MB
+vtu75/libra          latest    a7810a9b496c   24 hours ago    161MB
+cowsay               v1.0      752e6a5db67d   25 hours ago    184MB
+cowsay               v2.0      0f253fa64fa3   25 hours ago    184MB
+v_tu/ubuntu-nodejs   latest    2c177fd98512   8 days ago      78.1MB
+nginx                latest    4e1b6bae1e48   8 days ago      192MB
+ubuntu               latest    602eb6fb314b   2 weeks ago     78.1MB
+postgres             latest    f49abb9855df   8 weeks ago     438MB
+hello-world          latest    74cc54e27dc4   3 months ago    10.1kB
+registry             2         26b2eb03618e   19 months ago   25.4MB
+v_tu@PN-N-0237:~$ docker pull localhost:5000/nginx:latest
+latest: Pulling from nginx
+Digest: sha256:ae61960a9324ea2071d81ef4554f9015ff89cfa43cacbfe8b4a23d7d3710ecde
+Status: Downloaded newer image for localhost:5000/nginx:latest
+localhost:5000/nginx:latest
+v_tu@PN-N-0237:~$ docker images
+REPOSITORY             TAG       IMAGE ID       CREATED         SIZE
+my-nginx               backup    e4fa51748101   23 hours ago    254MB
+libra                  latest    a7810a9b496c   24 hours ago    161MB
+libra                  v0.0.1    a7810a9b496c   24 hours ago    161MB
+vtu75/libra            latest    a7810a9b496c   24 hours ago    161MB
+cowsay                 v1.0      752e6a5db67d   25 hours ago    184MB
+cowsay                 v2.0      0f253fa64fa3   25 hours ago    184MB
+v_tu/ubuntu-nodejs     latest    2c177fd98512   8 days ago      78.1MB
+nginx                  latest    4e1b6bae1e48   8 days ago      192MB
+localhost:5000/nginx   latest    4e1b6bae1e48   8 days ago      192MB
+ubuntu                 latest    602eb6fb314b   2 weeks ago     78.1MB
+postgres               latest    f49abb9855df   8 weeks ago     438MB
+hello-world            latest    74cc54e27dc4   3 months ago    10.1kB
+registry               2         26b2eb03618e   19 months ago   25.4MB
+v_tu@PN-N-0237:~$ curl http://localhost:5000/v2/_catalog
+curl: (7) Failed to connect to localhost port 5000 after 0 ms: Couldn't connect to server
+v_tu@PN-N-0237:~$ cat /proc/cpuinfo
+processor       : 0
+vendor_id       : GenuineIntel
+cpu family      : 6
+model           : 142
+model name      : Intel(R) Core(TM) i5-10310U CPU @ 1.70GHz
+stepping        : 12
+microcode       : 0xffffffff
+cpu MHz         : 2208.007
+cache size      : 6144 KB
+physical id     : 0
+siblings        : 8
+core id         : 0
+cpu cores       : 4
+apicid          : 0
+initial apicid  : 0
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 22
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmxfxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon rep_good nopl xtopology cpuid pni pclmulqdq vmx ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi ept vpid ept_ad fsgsbase bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt xsaveopt xsavec xgetbv1 xsaves md_clear flush_l1d arch_capabilities
+vmx flags       : vnmi invvpid ept_x_only ept_ad ept_1gb tsc_offset vtpr ept vpid unrestricted_guest ept_mode_based_exec
+bugs            : spectre_v1 spectre_v2 spec_store_bypass swapgs taa itlb_multihit srbds mmio_stale_data retbleed eibrs_pbrsb bhi
+bogomips        : 4416.01
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 39 bits physical, 48 bits virtual
+power management:
+
+processor       : 1
+vendor_id       : GenuineIntel
+cpu family      : 6
+model           : 142
+model name      : Intel(R) Core(TM) i5-10310U CPU @ 1.70GHz
+stepping        : 12
+microcode       : 0xffffffff
+cpu MHz         : 2208.007
+cache size      : 6144 KB
+physical id     : 0
+siblings        : 8
+core id         : 0
+cpu cores       : 4
+apicid          : 1
+initial apicid  : 1
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 22
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmxfxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon rep_good nopl xtopology cpuid pni pclmulqdq vmx ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi ept vpid ept_ad fsgsbase bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt xsaveopt xsavec xgetbv1 xsaves md_clear flush_l1d arch_capabilities
+vmx flags       : vnmi invvpid ept_x_only ept_ad ept_1gb tsc_offset vtpr ept vpid unrestricted_guest ept_mode_based_exec
+bugs            : spectre_v1 spectre_v2 spec_store_bypass swapgs taa itlb_multihit srbds mmio_stale_data retbleed eibrs_pbrsb bhi
+bogomips        : 4416.01
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 39 bits physical, 48 bits virtual
+power management:
+
+processor       : 2
+vendor_id       : GenuineIntel
+cpu family      : 6
+model           : 142
+model name      : Intel(R) Core(TM) i5-10310U CPU @ 1.70GHz
+stepping        : 12
+microcode       : 0xffffffff
+cpu MHz         : 2208.007
+cache size      : 6144 KB
+physical id     : 0
+siblings        : 8
+core id         : 1
+cpu cores       : 4
+apicid          : 2
+initial apicid  : 2
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 22
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmxfxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon rep_good nopl xtopology cpuid pni pclmulqdq vmx ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi ept vpid ept_ad fsgsbase bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt xsaveopt xsavec xgetbv1 xsaves md_clear flush_l1d arch_capabilities
+vmx flags       : vnmi invvpid ept_x_only ept_ad ept_1gb tsc_offset vtpr ept vpid unrestricted_guest ept_mode_based_exec
+bugs            : spectre_v1 spectre_v2 spec_store_bypass swapgs taa itlb_multihit srbds mmio_stale_data retbleed eibrs_pbrsb bhi
+bogomips        : 4416.01
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 39 bits physical, 48 bits virtual
+power management:
+
+processor       : 3
+vendor_id       : GenuineIntel
+cpu family      : 6
+model           : 142
+model name      : Intel(R) Core(TM) i5-10310U CPU @ 1.70GHz
+stepping        : 12
+microcode       : 0xffffffff
+cpu MHz         : 2208.007
+cache size      : 6144 KB
+physical id     : 0
+siblings        : 8
+core id         : 1
+cpu cores       : 4
+apicid          : 3
+initial apicid  : 3
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 22
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmxfxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon rep_good nopl xtopology cpuid pni pclmulqdq vmx ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi ept vpid ept_ad fsgsbase bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt xsaveopt xsavec xgetbv1 xsaves md_clear flush_l1d arch_capabilities
+vmx flags       : vnmi invvpid ept_x_only ept_ad ept_1gb tsc_offset vtpr ept vpid unrestricted_guest ept_mode_based_exec
+bugs            : spectre_v1 spectre_v2 spec_store_bypass swapgs taa itlb_multihit srbds mmio_stale_data retbleed eibrs_pbrsb bhi
+bogomips        : 4416.01
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 39 bits physical, 48 bits virtual
+power management:
+
+processor       : 4
+vendor_id       : GenuineIntel
+cpu family      : 6
+model           : 142
+model name      : Intel(R) Core(TM) i5-10310U CPU @ 1.70GHz
+stepping        : 12
+microcode       : 0xffffffff
+cpu MHz         : 2208.007
+cache size      : 6144 KB
+physical id     : 0
+siblings        : 8
+core id         : 2
+cpu cores       : 4
+apicid          : 4
+initial apicid  : 4
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 22
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmxfxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon rep_good nopl xtopology cpuid pni pclmulqdq vmx ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi ept vpid ept_ad fsgsbase bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt xsaveopt xsavec xgetbv1 xsaves md_clear flush_l1d arch_capabilities
+vmx flags       : vnmi invvpid ept_x_only ept_ad ept_1gb tsc_offset vtpr ept vpid unrestricted_guest ept_mode_based_exec
+bugs            : spectre_v1 spectre_v2 spec_store_bypass swapgs taa itlb_multihit srbds mmio_stale_data retbleed eibrs_pbrsb bhi
+bogomips        : 4416.01
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 39 bits physical, 48 bits virtual
+power management:
+
+processor       : 5
+vendor_id       : GenuineIntel
+cpu family      : 6
+model           : 142
+model name      : Intel(R) Core(TM) i5-10310U CPU @ 1.70GHz
+stepping        : 12
+microcode       : 0xffffffff
+cpu MHz         : 2208.007
+cache size      : 6144 KB
+physical id     : 0
+siblings        : 8
+core id         : 2
+cpu cores       : 4
+apicid          : 5
+initial apicid  : 5
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 22
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmxfxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon rep_good nopl xtopology cpuid pni pclmulqdq vmx ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi ept vpid ept_ad fsgsbase bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt xsaveopt xsavec xgetbv1 xsaves md_clear flush_l1d arch_capabilities
+vmx flags       : vnmi invvpid ept_x_only ept_ad ept_1gb tsc_offset vtpr ept vpid unrestricted_guest ept_mode_based_exec
+bugs            : spectre_v1 spectre_v2 spec_store_bypass swapgs taa itlb_multihit srbds mmio_stale_data retbleed eibrs_pbrsb bhi
+bogomips        : 4416.01
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 39 bits physical, 48 bits virtual
+power management:
+
+processor       : 6
+vendor_id       : GenuineIntel
+cpu family      : 6
+model           : 142
+model name      : Intel(R) Core(TM) i5-10310U CPU @ 1.70GHz
+stepping        : 12
+microcode       : 0xffffffff
+cpu MHz         : 2208.007
+cache size      : 6144 KB
+physical id     : 0
+siblings        : 8
+core id         : 3
+cpu cores       : 4
+apicid          : 6
+initial apicid  : 6
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 22
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmxfxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon rep_good nopl xtopology cpuid pni pclmulqdq vmx ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi ept vpid ept_ad fsgsbase bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt xsaveopt xsavec xgetbv1 xsaves md_clear flush_l1d arch_capabilities
+vmx flags       : vnmi invvpid ept_x_only ept_ad ept_1gb tsc_offset vtpr ept vpid unrestricted_guest ept_mode_based_exec
+bugs            : spectre_v1 spectre_v2 spec_store_bypass swapgs taa itlb_multihit srbds mmio_stale_data retbleed eibrs_pbrsb bhi
+bogomips        : 4416.01
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 39 bits physical, 48 bits virtual
+power management:
+
+processor       : 7
+vendor_id       : GenuineIntel
+cpu family      : 6
+model           : 142
+model name      : Intel(R) Core(TM) i5-10310U CPU @ 1.70GHz
+stepping        : 12
+microcode       : 0xffffffff
+cpu MHz         : 2208.007
+cache size      : 6144 KB
+physical id     : 0
+siblings        : 8
+core id         : 3
+cpu cores       : 4
+apicid          : 7
+initial apicid  : 7
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 22
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmxfxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon rep_good nopl xtopology cpuid pni pclmulqdq vmx ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi ept vpid ept_ad fsgsbase bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt xsaveopt xsavec xgetbv1 xsaves md_clear flush_l1d arch_capabilities
+vmx flags       : vnmi invvpid ept_x_only ept_ad ept_1gb tsc_offset vtpr ept vpid unrestricted_guest ept_mode_based_exec
+bugs            : spectre_v1 spectre_v2 spec_store_bypass swapgs taa itlb_multihit srbds mmio_stale_data retbleed eibrs_pbrsb bhi
+bogomips        : 4416.01
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 39 bits physical, 48 bits virtual
+power management:
+
+v_tu@PN-N-0237:~$ top
+top - 10:13:27 up 2 days, 20:50,  2 users,  load average: 0.41, 0.85, 0.65
+Tasks:  46 total,   1 running,  44 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  0.2 us,  0.6 sy,  0.0 ni, 98.7 id,  0.4 wa,  0.0 hi,  0.1 si,  0.0 st
+MiB Mem :   7748.0 total,   6768.2 free,    830.1 used,    460.1 buff/cache
+MiB Swap:   2048.0 total,   2047.8 free,      0.2 used.   6918.0 avail Mem
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+   2469 root      20   0 2687804 113564  60020 S   2.0   1.4   4:14.27 dockerd
+      1 root      20   0   22220  13472   9552 S   0.7   0.2   1:03.50 systemd
+    108 root      20   0   24256   6376   4844 S   0.3   0.1   0:10.68 systemd-udevd
+    472 v_tu      20   0   20264  11244   9160 S   0.3   0.1   0:04.97 systemd
+   2351 root      20   0 2098476  60680  35824 S   0.3   0.8   4:47.73 containerd
+   8760 root      20   0    2784    212     80 S   0.3   0.0   0:04.01 Relay(8768)
+  33261 v_tu      20   0    9312   5116   2964 R   0.3   0.1   0:00.51 top
+      2 root      20   0    2776   1924   1796 S   0.0   0.0   0:01.03 init-systemd(Ub
+      6 root      20   0    2792    132    132 S   0.0   0.0   0:00.09 init
+     63 root      19  -1   75008  27120  25916 S   0.0   0.3   0:42.59 systemd-journal
+    122 systemd+  20   0   21580  12960  10692 S   0.0   0.2   0:03.29 systemd-resolve
+    133 systemd+  20   0   91020   6364   5516 S   0.0   0.1   0:09.12 systemd-timesyn
+    176 root      20   0    4236   2684   2432 S   0.0   0.0   0:02.23 cron
+    177 message+  20   0    9660   5264   4532 S   0.0   0.1   0:13.50 dbus-daemon
+    194 root      20   0   18032   8488   7412 S   0.0   0.1   0:05.57 systemd-logind
+    206 root      20   0 1978188  20640  10716 S   0.0   0.3   0:26.11 wsl-pro-service
+    240 root      20   0    3160   1100   1012 S   0.0   0.0   0:00.01 agetty
+    243 root      20   0    3116   1084    992 S   0.0   0.0   0:00.00 agetty
+    246 syslog    20   0  222508   5600   4484 S   0.0   0.1   0:07.61 rsyslogd
+    272 root      20   0  107012  22484  13140 S   0.0   0.3   0:00.26 unattended-upgr
+    380 root      20   0    2784    204     80 S   0.0   0.0   0:00.00 SessionLeader
+    381 root      20   0    2784    208     80 S   0.0   0.0   0:04.55 Relay(382)
+    382 v_tu      20   0    6072   5248   3524 S   0.0   0.1   0:00.18 bash
+    383 root      20   0    6820   4700   3916 S   0.0   0.1   0:00.01 login
+    473 v_tu      20   0   21144   1724      0 S   0.0   0.0   0:00.00 (sd-pam)
+    494 v_tu      20   0    6072   5236   3584 S   0.0   0.1   0:00.02 bash
+    893 polkitd   20   0  308160   7980   7128 S   0.0   0.1   0:00.28 polkitd
+   3232 root      20   0    7252   4236   3536 S   0.0   0.1   0:00.03 su
+   3233 v_tu      20   0    6852   6176   3688 S   0.0   0.1   0:03.81 bash
+   7936 v_tu      20   0   22504  13100   7552 T   0.0   0.2   0:00.12 vi
+   8759 root      20   0    2784    208     80 S   0.0   0.0   0:00.00 SessionLeader
+   8768 v_tu      20   0    6324   5676   3720 S   0.0   0.1   0:02.79 bash
+  10294 root      20   0    2784    208     80 S   0.0   0.0   0:00.00 SessionLeader
+  10295 root      20   0    2784    212     80 S   0.0   0.0   0:00.53 Relay(10302)
+  10302 v_tu      20   0    6204   5340   3556 S   0.0   0.1   0:00.54 bash
+  20227 postgres  20   0  220248  31112  28628 S   0.0   0.4   0:05.59 postgres
+  20228 postgres  20   0  220380   8484   5916 S   0.0   0.1   0:00.09 postgres
+  20229 postgres  20   0  220400   5952   3412 S   0.0   0.1   0:01.49 postgres
+  20231 postgres  20   0  220248  10252   7708 S   0.0   0.1   0:01.60 postgres
+  20232 postgres  20   0  221844   8640   5828 S   0.0   0.1   0:00.88 postgres
+  20233 postgres  20   0  221828   6712   3956 S   0.0   0.1   0:00.17 postgres
+  22849 root      20   0    2784    208     80 S   0.0   0.0   0:00.00 SessionLeader
+  22850 root      20   0    2784    212     80 S   0.0   0.0   0:00.03 Relay(22851)
+  22851 v_tu      20   0    6204   5388   3616 S   0.0   0.1   0:00.15 bash
+v_tu@PN-N-0237:~$

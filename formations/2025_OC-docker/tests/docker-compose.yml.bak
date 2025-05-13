@@ -1,0 +1,41 @@
+# La section “services” permet de déclarer l’ensemble des conteneurs
+# qui constitueront notre environnement applicatif.
+services:
+# On déclare un service intitulé “web”
+web:
+# Le conteneur du service “web” utilise une image
+# construite à partir du fichier Dockerfile présent dans
+# le répertoire courant (./)
+build: ./
+# On expose les variables d’environnement suivantes
+# à notre conteneur
+environment:
+······- NODE_ENV=production
+· · # On déclare des volumes qui seront utilisés par notre conteneur
+# Ici, on “monte” le répertoire ./web de l’hôte sur le chemin /usr/src/app
+# dans le conteneur
+volumes:
+- ./web:/usr/src/app
+networks:
+my-network
+# On expose le port 3000 du conteneur sur le port 3000 de la machine hôte
+ports:
+- "3000:3000"·
+# On déclare un service intitulé “database”
+database:
+# Ce service utilise l’image mysql:5.7
+image: mysql:5.7
+# Déclaration des variables d’environnement
+# exposées dans le conteneur
+environment:
+······MYSQL_ROOT_PASSWORD: example
+· · # Déclaration des volumes utilisés par le conteneur.·
+volumes:
+# Dans le cas présent, on utilise un volume nommé “db-data”, monté
+# sur le chemin /var/lib/mysql dans le conteneur
+- db-data:/var/lib/mysql
+networks:
+my-network
+# On expose le port 3306 du conteneur sur le port 3306 de la machine hôte
+ports:
+- "3306:3306"
