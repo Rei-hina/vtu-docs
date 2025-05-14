@@ -1,0 +1,27 @@
+Saturday	
+FOSDEM 2025 - Program to Learn: The Power of Creative Coding	
+FOSDEM 2025 - Is There Really an SBOM Mandate?	
+FOSDEM 2025 - How Does Heinz Have 80% of a Commodity Market?* – Leveraging Trademarks in Free Software	
+FOSDEM 2025 - Project Lilliput - Looking Back and Ahead	
+FOSDEM 2025 - (Almost) everything I knew about Java performance was wrong	
+FOSDEM 2025 - Stratoshark: Applying the power of Wireshark to System Calls and Logs	
+FOSDEM 2025 - How browsers REALLY load Web pages	
+FOSDEM 2025 - [RESCHEDULED] CERN CTA Service: writing LHC data to tape with opensource software on commodity hardware	
+FOSDEM 2025 - What if Log4Shell were to happen today?	
+FOSDEM 2025 - How Threat Actors Are Weaponizing Your Favorite Open-Source Package Registry	
+Sunday	
+FOSDEM 2025 - GIMP 3 and beyond	
+FOSDEM 2025 - Room changeover & Intro to the Public sector Open Source block	
+FOSDEM 2025 - Making Workspaces Work Together (And Across Borders)	
+FOSDEM 2025 - openDesk and beyond: building the EuroStack	
+FOSDEM 2025 - Digital Identies in disarray	
+FOSDEM 2025 - Accelerating Digital Transformation in Europe: The Role of Digital Public Goods and Open Source Collaboration	
+FOSDEM 2025 - Government Collaboration - Intro	
+FOSDEM 2025 - How is Development and Collaboration Done in Public Sector Open Source Software Projects? Insights from Six Mature Case Studies	
+FOSDEM 2025 - OSOR Handbook on Open Source Software in Public Administration	
+FOSDEM 2025 - Nubo: the French government sovereign cloud	
+FOSDEM 2025 - Community Insights: Best Practices for Open Datasets for LLM training	
+FOSDEM 2025 - The Firefox AI Platform	
+FOSDEM 2025 - The most fun you'll ever have dealing with Firefox crashes	
+FOSDEM 2025 - What’s the (floating) Point of all these data types? A (not so) brief overview of the history and usage of datatypes within the wide world of computation	
+
