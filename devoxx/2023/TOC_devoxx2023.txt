@@ -1,0 +1,5 @@
+Rendons le DDD aux devs (Dorra BARTAGUIZ et Arnaud THIEFAINE)	(notes perdues...)
+De Java à Scala 3, des lambdas à la programmation fonctionnelle: un code plus lisible, plus expl...	
+Nix : Besoin d'env de développement ultra robuste? On se crée un env immutable et reproductible	
+Les secrets internes de Spring (Carl Azoury)	
+Télétravail asynchrone (Benoît Prioux)	
