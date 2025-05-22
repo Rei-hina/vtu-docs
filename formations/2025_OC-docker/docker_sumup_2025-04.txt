@@ -4,8 +4,8 @@
 
 -----------------------installation
 
-	sur poste infotel, pas de docker desktop, installation de WSL via GLPI
-	lancement de WLS : Ubuntu 24.04.1 LTS
+via WSL
+	lancement de WSL : Ubuntu 24.04.1 LTS
 	https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04-fr
 	
 	autre :
@@ -76,7 +76,7 @@
 	
 -----------------------run (nginx)
 
-	NOTE : depuis le réseau Infotel, blocage pour télécharger 'nginx' (probablement lié au proxi ??) ok depuis la maison
+	NOTE : depuis certains réseaux, blocage pour télécharger 'nginx' (probablement lié au proxi ??) ok depuis la maison
 		<< E: Some index files failed to download. They have been ignored, or old ones used instead. >>
 		
 	sur le terminal :	
@@ -182,7 +182,6 @@
 -----------------------login
 
 	s'enregistrer sur DockerHub : https://hub.docker.com/
-	compte : vtu75/(mdp infotel simple)
 	
 	sur le terminal :	
 		docker login
