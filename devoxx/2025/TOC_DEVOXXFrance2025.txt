@@ -1,0 +1,30 @@
+Requête	
+	Elasticsearch Query Language: ES|QL - David Pilato (Elastic)	1
+	Du full text search dans PostgreSQL ! - Zied Ben abderrahim (Capco), Sébastien Keller (Takima)	
+Test	
+	Et si on faisait du simulation-driven development ? - Pierre Zemb (Clever Cloud)	
+	Donuts et A/B tests : un trou dans la logique de vos évolutions produit	
+Empreinte	
+	Aidons notre planète en baissant le thermostat de la 5G sans gripper le réseau	
+Frontend	
+	Explorons comment fonctionne la réactivité des frameworks frontend modernes🔬⚛️	
+	En JavaScript, il y a un paquet pour tout... et souvent pour rien. - Estéban Soubiran (Maiaspace)	
+Alternative	
+	Et si Git n’était pas toujours la réponse ? Alternatives avec Pijul et Darcs	
+REX	
+	Retour d'expérience : migrer une application critique vers le cloud*	
+Sécurité	
+	Les gardiens des données à l'ère de l'IA - Carmen Piciorus (La Poste - BSCC)	
+	Securing LLM-Powered Applications: Overcoming Security and Privacy Challenges	
+	403 Forbidden - Panorama de la gestion des autorisations - François Eckert (Big ACL)	
+IA
+	D'OpenAI à Opensource AI: entre propriété commerciale et ouverture collaborative	
+Data	
+	John Doe et Jhon Doe sont dans un bateau : la magie derrière l'Entity Resolution	
+	Savez-vous ce qu’est la couleur ? Découvrez la science derrière les pixels 🎨	
+Standards / Normalisation	
+	Le tic-tac de l’horloge : la standardisation, pourquoi ca compte vraiment ?	
+Java	
+	Comment builder Java depuis ses sources - Antoine DESSAIGNE (Axway)	
+	30 ans d'Hello World en Java avec les JDK 1.0 à 24 - Jean-Michel Doudoux (Sciam)	
+
