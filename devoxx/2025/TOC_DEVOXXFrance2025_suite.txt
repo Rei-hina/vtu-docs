@@ -1,0 +1,21 @@
+Frontend	
+	Explorons comment fonctionne la réactivité des frameworks frontend modernes🔬⚛️	
+	En JavaScript, il y a un paquet pour tout... et souvent pour rien. - Estéban Soubiran (Maiaspace)	
+	La réactivité et les signaux : démystifions la magie du frontend - Estéban Soubiran (Maiaspace)	
+Repo	
+	Et si Git n’était pas toujours la réponse ? Alternatives avec Pijul et Darcs	
+	Gitflow c'est bien, Gitbutler c'est mieux ! - Yann-Thomas Le Moigne (Apside), Lilian Forget (Apside)	
+Sécurité	
+	Les gardiens des données à l'ère de l'IA - Carmen Piciorus (La Poste - BSCC)	
+	Securing LLM-Powered Applications: Overcoming Security and Privacy Challenges	
+	403 Forbidden - Panorama de la gestion des autorisations - François Eckert (Big ACL)	
+	Une identité pour les fédérer toutes ! - Sébastien Ferrer (OVHcloud)	
+	Guide de survie pour créer son authentification à l’intention des développeurs	
+Java	
+	Comment builder Java depuis ses sources - Antoine DESSAIGNE (Axway)	
+	30 ans d'Hello World en Java avec les JDK 1.0 à 24 - Jean-Michel Doudoux (Sciam)	
+Conteneur	
+	🐋 Simplifiez la conteneurisation de vos idées ! - Thomas DA ROCHA (Lenra)	
+Observabilité	
+	L’Observabilité pour les devs: outils-clé pour survivre quand la prod plantera	
+
