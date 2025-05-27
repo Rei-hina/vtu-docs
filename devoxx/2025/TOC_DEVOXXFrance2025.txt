@@ -41,8 +41,22 @@ Repo
 Sécurité	
 	Une identité pour les fédérer toutes ! - Sébastien Ferrer (OVHcloud)	
 	Guide de survie pour créer son authentification à l’intention des développeurs	
+	Top 3 des outils de l'OWASP - Florian Bernard (OpenAirlines) [à tester]	
 Conteneur	
 	🐋 Simplifiez la conteneurisation de vos idées ! - Thomas DA ROCHA (Lenra)	
 Observabilité	
 	L’Observabilité pour les devs: outils-clé pour survivre quand la prod plantera	
-
+Base de données	
+	15 ans d'évolution des bases de données en 30 minutes avec Couchbase - Laurent Doguin (Couchbase)	
+	Optimisation des requêtes PostgreSQL : Parlons Performance ! - Lætitia Avrot (EDB)	
+Data	
+	Iceberg: pourquoi devez-vous connaitre ce nouveau format de stockage de données?	
+IA	
+	Quand l'IA fait le tri de manière industrialisée	
+	LLMs can't optimize schedules, but AI can!	
+Tests	
+	Tools in Action : Testez en end-to-end ce qui compte vraiment pour vos utilisateurs avec Gravity	
+Java	
+	Continuations: The magic behind virtual threads in Java - Balkrishna Rawool (Netherlands / ING Bank)	
+Code	
+	Comment allonger notre build nous a fait gagner du temps ?	
